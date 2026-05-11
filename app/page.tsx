@@ -5,14 +5,10 @@ import { TickerTape } from "@/components/TickerTape";
 import { HeroCanvas } from "@/components/HeroCanvas";
 import { AgentDiagram, DisadusBoard } from "@/components/ProjectVisuals";
 import {
-  aboutPillars,
   agentQrStats,
   contacts,
   disadusStats,
   heroMeta,
-  nowCards,
-  timelineItems,
-  toolkitGroups,
   workItems,
 } from "@/data/portfolio";
 
@@ -23,13 +19,9 @@ export default function Home() {
       <main>
         <Hero />
         <TickerTape />
-        <About />
+        <SelectedWork />
         <AgentQr />
         <Disadus />
-        <SelectedWork />
-        <Experience />
-        <Toolkit />
-        <Now />
         <Contact />
       </main>
       <Footer />
@@ -63,33 +55,6 @@ function Hero() {
               </div>
             ))}
           </aside>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function About() {
-  return (
-    <section id="about" data-screen-label="02 About">
-      <div className="wrap">
-        <SectionHeader label="§ 01 — Disposition">
-          Two threads I keep <em>pulling on</em>.
-        </SectionHeader>
-
-        <div className="about-grid">
-          {aboutPillars.map((pillar) => (
-            <article className={`pillar ${pillar.tone}`} key={pillar.label}>
-              <span className="label">{pillar.label}</span>
-              <h3>{pillar.heading}</h3>
-              <p>{pillar.body}</p>
-              <ul>
-                {pillar.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
         </div>
       </div>
     </section>
@@ -175,10 +140,10 @@ function Disadus() {
 
 function SelectedWork() {
   return (
-    <section id="work" data-screen-label="05 Selected work">
+    <section id="work" data-screen-label="02 Selected work">
       <div className="wrap">
-        <SectionHeader label="§ 03 — Selected work">
-          Things I&apos;ve shipped, <em>measured</em>, and learned from.
+        <SectionHeader label="§ 01 — Work Experience">
+          Some of my <em>experiences</em>.
         </SectionHeader>
 
         <div className="work-list">

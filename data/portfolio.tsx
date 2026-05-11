@@ -9,10 +9,9 @@ export type Stat = {
 };
 
 export const navItems = [
-  { href: "#about", label: "About" },
   { href: "#work", label: "Work" },
-  { href: "#experience", label: "Experience" },
-  { href: "#toolkit", label: "Toolkit" },
+  { href: "#featured", label: "AgentQR" },
+  { href: "#disadus", label: "Disadus" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -45,55 +44,6 @@ export const tapeItems = [
   { key: "cv-precision", value: "+5%", tone: "up" },
   { key: "gpa", value: "3.8 / 4.0" },
   { key: "now reading", value: '"Cognitive architectures for LMs"', tone: "glyph" },
-];
-
-export const aboutPillars = [
-  {
-    tone: "terra" as const,
-    label: "Thread A",
-    heading: (
-      <>
-        The <em>AI&nbsp;</em> stack
-      </>
-    ),
-    body: (
-      <>
-        I care about LLM systems where you can actually answer <em>why</em> they
-        work. I write evals before features, prefer retrieval grounded in primary
-        sources, and design agent architectures with controlled perturbation
-        experiments rather than vibes.
-      </>
-    ),
-    bullets: [
-      "Agent memory & long-horizon reasoning",
-      "Retrieval-augmented systems · LLM-as-judge eval",
-      "Query decomposition · multi-agent debate",
-      "Failure-mode taxonomy · benchmark design",
-    ],
-  },
-  {
-    tone: "blue" as const,
-    label: "Thread B",
-    heading: (
-      <>
-        The <em>low-latency</em> stack
-      </>
-    ),
-    body: (
-      <>
-        I&apos;m drawn to systems where you can&apos;t hand-wave performance:
-        quantitative research pipelines, signal generation, market data plumbing. I
-        treat trading systems with the same discipline as production ML — backtest,
-        attribute, falsify, ship.
-      </>
-    ),
-    bullets: [
-      "Quantitative research & signal mining",
-      "Backtesting frameworks · Sharpe attribution",
-      "Financial data pipelines · SEC + tick data",
-      "C / C++ systems programming",
-    ],
-  },
 ];
 
 export const agentQrStats: Stat[] = [
@@ -217,66 +167,6 @@ export const workItems: Array<{
       ),
     },
   ];
-
-export const timelineItems = [
-  ["2026 — Present", "Project Lead, AgentQR", "Boiler Quant", "Purdue · West Lafayette"],
-  ["2026 — Present", "Research Assistant", "Prof. Tianyi Zhang", "Purdue · West Lafayette"],
-  ["2025 — Jan / Jun", "Software Engineering Intern", "MightyBot", "Palo Alto, CA"],
-  ["2023 — 2024", "Software Engineering Intern", "Awareye", "Palo Alto, CA"],
-  ["2022 — 2025", "Co-founder", "Disadus (LMS)", "Remote · 8 schools"],
-  ["2022 — 2023", "Research Assistant", "Prof. Koushik Sen", "UC Berkeley"],
-];
-
-export const toolkitGroups = [
-  {
-    title: "Languages",
-    items: [
-      ["Python", "research, RAG"],
-      ["C / C++", "systems"],
-      ["TypeScript", "product"],
-      ["Java", "OOP"],
-      ["Swift", "mobile"],
-    ],
-  },
-  {
-    title: "AI / Research",
-    items: ["LangChain", "PyTorch · TensorFlow", "OpenAI · Gemini APIs", "RAG · LLM-as-judge", "Pydantic schemas"],
-  },
-  {
-    title: "Quant / Data",
-    items: ["Pandas · NumPy", "Backtesting frameworks", "SEC filings · tick data", "Financial pipelines", "Sharpe / DD attribution"],
-  },
-  {
-    title: "Infra",
-    items: ["Docker", "FastAPI", "PyTest", "Git", "MongoDB · Postgres"],
-  },
-];
-
-export const nowCards = [
-  {
-    label: "Reading",
-    title: (
-      <>
-        Foundations of agent <em>memory</em> &amp; reflection.
-      </>
-    ),
-    desc: "Synthesizing 30+ papers on long-horizon agent reasoning to identify research gaps for an original hypothesis.",
-  },
-  {
-    label: "Building",
-    title: (
-      <>
-        Cross-sector <em>signal mining</em> for AgentQR.
-      </>
-    ),
-    desc: "A retrieval pipeline that ties every model-generated trade thesis back to a timestamped primary source.",
-  },
-  {
-    label: "Studying",
-    title: <>Proof-based linear algebra · systems in C.</>,
-    desc: "Coursework that strengthens the foundations underneath both threads — formal reasoning and the close-to-the-metal half.",
-  },
-];
 
 export const contacts = [
   { label: "Email", value: "agarw534@purdue.edu", href: "mailto:agarw534@purdue.edu" },

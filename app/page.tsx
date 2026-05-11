@@ -43,8 +43,8 @@ function Hero() {
             </div>
             <h1 className="display">Ayush Agarwal.</h1>
             <p className="lede">
-              CS undergrad at Purdue. I work on LLM agents and low-latency systems — currently
-              leading AgentQR at Boiler Quant and doing research with Prof. Tianyi Zhang.
+              CS undergrad at Purdue interested in building intelligent systems. I currently
+              lead the AgentQR team at Boiler Quant and do coding agent research under Prof. Tianyi Zhang.
             </p>
           </div>
 

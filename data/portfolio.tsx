@@ -53,7 +53,7 @@ export const aboutPillars = [
     label: "Thread A",
     heading: (
       <>
-        The <em>AI&nbsp;stack</em> — from agent memory to evaluation.
+        The <em>AI&nbsp;</em> stack
       </>
     ),
     body: (
@@ -76,7 +76,7 @@ export const aboutPillars = [
     label: "Thread B",
     heading: (
       <>
-        The <em>low-latency</em> stack — where milliseconds are budget.
+        The <em>low-latency</em> stack
       </>
     ),
     body: (
@@ -117,106 +117,106 @@ export const workItems: Array<{
   tags: string[];
   when: ReactNode;
 }> = [
-  {
-    number: "01",
-    org: "RepoChat at MightyBot",
-    role: "SWE Intern · Palo Alto",
-    body: (
-      <>
-        Shipped an AI-powered analysis platform serving{" "}
-        <strong>GPT-4o queries over GitHub repositories</strong> end-to-end — from
-        architecture to deployment to iterative improvement. I built the query
-        decomposition layer (LangChain agents + Pydantic schemas) that routes
-        complex multi-file questions into file-scoped subtasks.
-      </>
-    ),
-    stats: [
-      { value: "+30%", label: "Answer relevance · LLM-as-judge", tone: "terra" },
-      { value: "−60%", label: "End-to-end latency", tone: "blue" },
-      { value: "+25%", label: "Comprehensiveness" },
-    ],
-    tags: ["LangChain", "Pydantic", "GPT-4o", "Eval suite"],
-    when: (
-      <>
-        Jan&nbsp;2025
-        <br />
-        —&nbsp;Jun&nbsp;2025
-      </>
-    ),
-  },
-  {
-    number: "02",
-    org: "Agent memory research",
-    role: "Research · Purdue · Prof. Tianyi Zhang",
-    body: (
-      <>
-        Conducting end-to-end benchmarking of LLM-based systems — cataloging failure
-        modes across taxonomies and synthesizing findings into{" "}
-        <strong>weekly research presentations</strong> for a team of 3 PhDs.
-        Currently testing hypotheses about agent memory architecture through{" "}
-        <strong>controlled perturbation experiments</strong>, isolating which
-        signals are most predictive of performance gains.
-      </>
-    ),
-    tags: [
-      "Benchmarking",
-      "Perturbation studies",
-      "30+ papers synthesized",
-      "Architecture decisions",
-    ],
-    when: (
-      <>
-        Jan&nbsp;2026
-        <br />— Present
-      </>
-    ),
-  },
-  {
-    number: "03",
-    org: "Code-idiom mining",
-    role: "Research · UC Berkeley · Prof. Koushik Sen",
-    body: (
-      <>
-        Designed and maintained a Python data-mining pipeline over{" "}
-        <strong>100+ GitHub repositories</strong> to extract, deduplicate, and
-        cluster code snippets for a code-idiom similarity model. Research
-        contributed to{" "}
-        <a className="inline-link" href="https://arxiv.org/abs/2312.15157">
-          arXiv:2312.15157
-        </a>
-        .
-      </>
-    ),
-    tags: ["Python", "Static analysis", "Clustering", "arXiv 2023"],
-    when: (
-      <>
-        Oct&nbsp;2022
-        <br />— Jul&nbsp;2023
-      </>
-    ),
-  },
-  {
-    number: "04",
-    org: "Awareye",
-    role: "SWE Intern · Edge CV",
-    body: (
-      <>
-        Raised production CV model precision <strong>+5%</strong> through targeted
-        data augmentation and systematic hyperparameter search on an edge-deployed
-        real-time object-detection pipeline. Shipped cross-platform mobile apps in{" "}
-        <strong>React Native and Swift</strong> across multiple enterprise client
-        deployment cycles.
-      </>
-    ),
-    tags: ["Real-time CV", "Edge inference", "React Native", "Swift"],
-    when: (
-      <>
-        Dec&nbsp;2023
-        <br />— Feb&nbsp;2024
-      </>
-    ),
-  },
-];
+    {
+      number: "01",
+      org: "RepoChat at MightyBot",
+      role: "SWE Intern · Palo Alto",
+      body: (
+        <>
+          Shipped an AI-powered analysis platform serving{" "}
+          <strong>GPT-4o queries over GitHub repositories</strong> end-to-end — from
+          architecture to deployment to iterative improvement. I built the query
+          decomposition layer (LangChain agents + Pydantic schemas) that routes
+          complex multi-file questions into file-scoped subtasks.
+        </>
+      ),
+      stats: [
+        { value: "+30%", label: "Answer relevance · LLM-as-judge", tone: "terra" },
+        { value: "−60%", label: "End-to-end latency", tone: "blue" },
+        { value: "+25%", label: "Comprehensiveness" },
+      ],
+      tags: ["LangChain", "Pydantic", "GPT-4o", "Eval suite"],
+      when: (
+        <>
+          Jan&nbsp;2025
+          <br />
+          —&nbsp;Jun&nbsp;2025
+        </>
+      ),
+    },
+    {
+      number: "02",
+      org: "Agent memory research",
+      role: "Research · Purdue · Prof. Tianyi Zhang",
+      body: (
+        <>
+          Conducting end-to-end benchmarking of LLM-based systems — cataloging failure
+          modes across taxonomies and synthesizing findings into{" "}
+          <strong>weekly research presentations</strong> for a team of 3 PhDs.
+          Currently testing hypotheses about agent memory architecture through{" "}
+          <strong>controlled perturbation experiments</strong>, isolating which
+          signals are most predictive of performance gains.
+        </>
+      ),
+      tags: [
+        "Benchmarking",
+        "Perturbation studies",
+        "30+ papers synthesized",
+        "Architecture decisions",
+      ],
+      when: (
+        <>
+          Jan&nbsp;2026
+          <br />— Present
+        </>
+      ),
+    },
+    {
+      number: "03",
+      org: "Code-idiom mining",
+      role: "Research · UC Berkeley · Prof. Koushik Sen",
+      body: (
+        <>
+          Designed and maintained a Python data-mining pipeline over{" "}
+          <strong>100+ GitHub repositories</strong> to extract, deduplicate, and
+          cluster code snippets for a code-idiom similarity model. Research
+          contributed to{" "}
+          <a className="inline-link" href="https://arxiv.org/abs/2312.15157">
+            arXiv:2312.15157
+          </a>
+          .
+        </>
+      ),
+      tags: ["Python", "Static analysis", "Clustering", "arXiv 2023"],
+      when: (
+        <>
+          Oct&nbsp;2022
+          <br />— Jul&nbsp;2023
+        </>
+      ),
+    },
+    {
+      number: "04",
+      org: "Awareye",
+      role: "SWE Intern · Edge CV",
+      body: (
+        <>
+          Raised production CV model precision <strong>+5%</strong> through targeted
+          data augmentation and systematic hyperparameter search on an edge-deployed
+          real-time object-detection pipeline. Shipped cross-platform mobile apps in{" "}
+          <strong>React Native and Swift</strong> across multiple enterprise client
+          deployment cycles.
+        </>
+      ),
+      tags: ["Real-time CV", "Edge inference", "React Native", "Swift"],
+      when: (
+        <>
+          Dec&nbsp;2023
+          <br />— Feb&nbsp;2024
+        </>
+      ),
+    },
+  ];
 
 export const timelineItems = [
   ["2026 — Present", "Project Lead, AgentQR", "Boiler Quant", "Purdue · West Lafayette"],

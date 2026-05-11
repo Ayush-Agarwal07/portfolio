@@ -1,5 +1,6 @@
 import { navItems } from "@/data/portfolio";
 import { CurrentYear, LocalTime } from "./LocalTime";
+import { ScrollProgress } from "./ScrollProgress";
 
 export function Topbar() {
   return (
@@ -16,6 +17,7 @@ export function Topbar() {
           ))}
         </nav>
       </div>
+      <ScrollProgress />
     </header>
   );
 }

@@ -20,6 +20,7 @@ export default function Home() {
         <Hero />
         <TickerTape />
         <SelectedWork />
+        <SectionBridge label="Featured projects" />
         <AgentQr />
         <Disadus />
         <Contact />
@@ -171,6 +172,18 @@ function SelectedWork() {
         </div>
       </div>
     </section>
+  );
+}
+
+function SectionBridge({ label }: { label: string }) {
+  return (
+    <div className="section-bridge" aria-hidden="true">
+      <span className="section-bridge-line" />
+      <span className="section-bridge-label">
+        {label} <span className="section-bridge-chevron">↓</span>
+      </span>
+      <span className="section-bridge-line" />
+    </div>
   );
 }
 

@@ -44,7 +44,7 @@ function Hero() {
             <h1 className="display">Ayush Agarwal.</h1>
             <p className="lede">
               CS undergrad at Purdue interested in building intelligent systems. I currently
-              lead the AgentQR team at Boiler Quant and do coding agent research under Prof. Tianyi Zhang.
+              lead the AgentQR team at Boiler Quant and research coding agents under Prof. Tianyi Zhang.
             </p>
           </div>
 

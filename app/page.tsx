@@ -174,89 +174,9 @@ function SelectedWork() {
   );
 }
 
-function Experience() {
-  return (
-    <section id="experience" data-screen-label="06 Experience">
-      <div className="wrap">
-        <SectionHeader label="§ 04 — Career">
-          A short <em>résumé</em>, in one column.
-        </SectionHeader>
-
-        <div className="timeline">
-          {timelineItems.map(([when, what, role, where]) => (
-            <div className="tl-row" key={`${when}-${what}`}>
-              <div className="tl-when">{when}</div>
-              <div className="tl-what">
-                {what} <span className="role">— {role}</span>
-              </div>
-              <div className="tl-where">{where}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Toolkit() {
-  return (
-    <section id="toolkit" data-screen-label="07 Toolkit">
-      <div className="wrap">
-        <SectionHeader label="§ 05 — Toolkit">
-          What I reach for, <em>and why</em>.
-        </SectionHeader>
-
-        <div className="toolkit">
-          {toolkitGroups.map((group) => (
-            <div className="tk-col" key={group.title}>
-              <h4>{group.title}</h4>
-              <ul>
-                {group.items.map((item) => {
-                  if (Array.isArray(item)) {
-                    const [name, context] = item;
-                    return (
-                      <li key={name}>
-                        {name} <span className="dim">— {context}</span>
-                      </li>
-                    );
-                  }
-
-                  return <li key={item}>{item}</li>;
-                })}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Now() {
-  return (
-    <section id="now" data-screen-label="08 Now">
-      <div className="wrap">
-        <SectionHeader label="§ 06 — Currently">
-          What&apos;s open on my <em>desk</em> right now.
-        </SectionHeader>
-
-        <div className="now-grid">
-          {nowCards.map((card) => (
-            <article className="now-card" key={card.label}>
-              <span className="label">{card.label}</span>
-              <div className="ttl">{card.title}</div>
-              <div className="desc">{card.desc}</div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Contact() {
   return (
-    <section className="contact" id="contact" data-screen-label="09 Contact">
+    <section className="contact" id="contact" data-screen-label="05 Contact">
       <div className="wrap">
         <div className="contact-inner">
           <h2>

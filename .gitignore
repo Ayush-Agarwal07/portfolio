@@ -5,3 +5,7 @@ out
 dist
 *.log
 tsconfig.tsbuildinfo
+
+# local agent / chat artifacts — not part of the site
+.claude/
+**/chats/

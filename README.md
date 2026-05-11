@@ -1,6 +1,8 @@
-# ayushagarwal.com
+# portfolio
 
-Personal site. A single long-scroll page — hero, about, two featured projects (AgentQR and Disadus), selected work, a one-column résumé timeline, a toolkit grid, and a contact slab. Built to read like a print editorial, not a SaaS landing page.
+Personal site for Ayush Agarwal. A single long-scroll page — hero, about, two featured projects (AgentQR and Disadus), selected work, a one-column résumé timeline, a toolkit grid, and a contact slab. Built to read like a print editorial, not a SaaS landing page.
+
+Live at **https://ayush-agarwal07.github.io/portfolio/**.
 
 ---
 
@@ -10,7 +12,7 @@ Personal site. A single long-scroll page — hero, about, two featured projects 
 npm install
 npm run dev      # http://localhost:3000
 npm run check    # tsc --noEmit
-npm run build    # next build
+npm run build    # next build → static export to out/
 ```
 
 Node 20+. No environment variables, no database, no API routes — the site is fully static once built.
@@ -19,7 +21,7 @@ Node 20+. No environment variables, no database, no API routes — the site is f
 
 ## Stack
 
-- **Next.js 16** (App Router) + **React 19** + **TypeScript**
+- **Next.js 16** (App Router, static export) + **React 19** + **TypeScript**
 - **Tailwind v4** for utilities; the bulk of the visual system lives in hand-written CSS inside `@layer` blocks in `app/globals.css` (OKLCH tokens, custom typography, grid layouts)
 - **HTML5 Canvas** for the hero token-graph animation — no library, ~260 lines
 - **Instrument Serif** (display) + **Geist** (text) + **JetBrains Mono** (UI chrome / labels)
@@ -46,8 +48,9 @@ components/
 data/
   portfolio.tsx     # all copy, links, stats, timeline, toolkit, nav — single source of truth
 
-public/             # static assets
+public/             # static assets (.nojekyll lives here so Pages doesn't run Jekyll)
 legacy/             # the original Portfolio.html, kept as a reference diff target
+.github/workflows/  # deploy.yml — builds and ships to GitHub Pages on every push to main
 ```
 
 The rule of thumb: **copy lives in `data/portfolio.tsx`, structure lives in `app/page.tsx`, behavior lives in `components/`, looks live in `globals.css`.** Editing copy never requires touching JSX.
@@ -84,7 +87,7 @@ Almost every edit lives in one file:
 ## Conventions
 
 - **No CSS-in-JS, no styled-components.** All styles are in `globals.css` under `@layer base` / `@layer components`. Tailwind utilities are used sparingly for one-off spacing.
-- **Server components by default.** Only `HeroCanvas` and `LocalTime` are `"use client"` — everything else renders on the server.
+- **Server components by default.** Only `HeroCanvas` and `LocalTime` are `"use client"` — everything else renders on the server, then everything is exported to static HTML at build time.
 - **No comments unless something is genuinely non-obvious.** The structure should explain itself.
 - **`legacy/Portfolio.original.html`** is kept as a reference — when the visual system needs a sanity check against the original design, diff against it.
 
@@ -92,9 +95,15 @@ Almost every edit lives in one file:
 
 ## Deployment
 
-Deploys cleanly to Vercel out of the box (`next build`, no runtime config). Works on any platform that runs a Next.js app — no external services required.
+Deployed to **GitHub Pages** at `/portfolio/` on this repo. The flow:
+
+- `next.config.mjs` sets `output: "export"`, `basePath: "/portfolio"`, `assetPrefix: "/portfolio/"`, and `images: { unoptimized: true }` so the build produces a fully static `out/` directory with the right asset paths.
+- `public/.nojekyll` prevents GitHub Pages from running Jekyll over the output (Jekyll would otherwise drop `_next/` because of the leading underscore).
+- `.github/workflows/deploy.yml` runs on every push to `main`: `npm ci` → `npm run build` → uploads `out/` as the Pages artifact → deploys.
+- In **Settings → Pages**, the source must be set to **"GitHub Actions"** (not "Deploy from a branch") — otherwise GitHub's legacy workflow will overwrite the deploy with a rendered README.
+
+To move the site to the apex of a `username.github.io` repo (or a custom domain at the root), rename the repo to `ayush-agarwal07.github.io` and drop `basePath`/`assetPrefix` from `next.config.mjs`.
 
 ---
 
 © Ayush Agarwal · agarw534@purdue.edu
-# portfolio

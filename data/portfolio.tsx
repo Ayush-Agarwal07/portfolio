@@ -69,6 +69,36 @@ export const workItems: Array<{
 }> = [
     {
       number: "01",
+      org: "Agent memory research",
+      role: "Research · Purdue · Prof. Tianyi Zhang",
+      body: (
+        <>
+          Conducting end-to-end benchmarking of LLM-based systems — cataloging failure
+          modes across taxonomies and synthesizing findings into{" "}
+          <strong>weekly research presentations</strong> for a team of 3 PhDs.
+          Currently testing hypotheses about agent memory architecture through{" "}
+          <strong>controlled perturbation experiments</strong>, isolating which
+          signals are most predictive of performance gains.
+        </>
+      ),
+      stats: [
+        { value: "30+", label: "Papers synthesized", tone: "terra" },
+        { value: "50+", label: "Experiments run", tone: "blue" },
+      ],
+      tags: [
+        "Benchmarking",
+        "Perturbation studies",
+        "Architecture decisions",
+      ],
+      when: (
+        <>
+          Jan&nbsp;2026
+          <br />— Present
+        </>
+      ),
+    },
+    {
+      number: "02",
       org: "RepoChat at MightyBot",
       role: "SWE Intern · Palo Alto",
       body: (
@@ -95,34 +125,31 @@ export const workItems: Array<{
       ),
     },
     {
-      number: "02",
-      org: "Agent memory research",
-      role: "Research · Purdue · Prof. Tianyi Zhang",
+      number: "03",
+      org: "Awareye",
+      role: "SWE Intern · Edge CV",
       body: (
         <>
-          Conducting end-to-end benchmarking of LLM-based systems — cataloging failure
-          modes across taxonomies and synthesizing findings into{" "}
-          <strong>weekly research presentations</strong> for a team of 3 PhDs.
-          Currently testing hypotheses about agent memory architecture through{" "}
-          <strong>controlled perturbation experiments</strong>, isolating which
-          signals are most predictive of performance gains.
+          Raised production CV model precision <strong>+5%</strong> through targeted
+          data augmentation and systematic hyperparameter search on an edge-deployed
+          real-time object-detection pipeline. Shipped cross-platform mobile apps in{" "}
+          <strong>React Native and Swift</strong> across multiple enterprise client
+          deployment cycles.
         </>
       ),
-      tags: [
-        "Benchmarking",
-        "Perturbation studies",
-        "30+ papers synthesized",
-        "Architecture decisions",
+      stats: [
+        { value: "+5%", label: "Production CV precision", tone: "terra" },
       ],
+      tags: ["Real-time CV", "Edge inference", "React Native", "Swift"],
       when: (
         <>
-          Jan&nbsp;2026
-          <br />— Present
+          Dec&nbsp;2023
+          <br />— Feb&nbsp;2024
         </>
       ),
     },
     {
-      number: "03",
+      number: "04",
       org: "Code-idiom mining",
       role: "Research · UC Berkeley · Prof. Koushik Sen",
       body: (
@@ -137,32 +164,14 @@ export const workItems: Array<{
           .
         </>
       ),
+      stats: [
+        { value: "100+", label: "GitHub repos mined", tone: "terra" },
+      ],
       tags: ["Python", "Static analysis", "Clustering", "arXiv 2023"],
       when: (
         <>
           Oct&nbsp;2022
           <br />— Jul&nbsp;2023
-        </>
-      ),
-    },
-    {
-      number: "04",
-      org: "Awareye",
-      role: "SWE Intern · Edge CV",
-      body: (
-        <>
-          Raised production CV model precision <strong>+5%</strong> through targeted
-          data augmentation and systematic hyperparameter search on an edge-deployed
-          real-time object-detection pipeline. Shipped cross-platform mobile apps in{" "}
-          <strong>React Native and Swift</strong> across multiple enterprise client
-          deployment cycles.
-        </>
-      ),
-      tags: ["Real-time CV", "Edge inference", "React Native", "Swift"],
-      when: (
-        <>
-          Dec&nbsp;2023
-          <br />— Feb&nbsp;2024
         </>
       ),
     },

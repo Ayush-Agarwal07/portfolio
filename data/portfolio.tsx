@@ -69,6 +69,31 @@ export const workItems: Array<{
 }> = [
     {
       number: "01",
+      org: "Skan AI",
+      role: "AI Engineering Intern · Menlo Park",
+      body: (
+        <>
+          Building a <strong>multi-agent LLM system (Architect, Builder, Validator)</strong>{" "}
+          that turns recorded user sessions into executable automation workflows,
+          contributing as 1 of 5 engineers on the core pipeline. I architected the
+          orchestration layer in <strong>Pydantic AI</strong> with typed schema
+          hand-offs, LiteLLM-based model routing across tenants, and Vault-scoped
+          credentials — emitting structured JSON workflows that run on{" "}
+          <strong>Temporal</strong>. Also built tooling for capability lookup,
+          schema retrieval, and dynamic subagent spawning, grounded in research on
+          trace-to-program synthesis and LLM cascading.
+        </>
+      ),
+      tags: ["Pydantic AI", "LiteLLM", "Temporal", "Multi-agent", "Vault"],
+      when: (
+        <>
+          May&nbsp;2026
+          <br />— Aug&nbsp;2026
+        </>
+      ),
+    },
+    {
+      number: "02",
       org: "Agent memory research",
       role: "Research · Purdue · Prof. Tianyi Zhang",
       body: (
@@ -98,7 +123,7 @@ export const workItems: Array<{
       ),
     },
     {
-      number: "02",
+      number: "03",
       org: "RepoChat at MightyBot",
       role: "SWE Intern · Palo Alto",
       body: (
@@ -125,7 +150,7 @@ export const workItems: Array<{
       ),
     },
     {
-      number: "03",
+      number: "04",
       org: "Awareye",
       role: "SWE Intern · Edge CV",
       body: (
@@ -149,7 +174,7 @@ export const workItems: Array<{
       ),
     },
     {
-      number: "04",
+      number: "05",
       org: "Code-idiom mining",
       role: "Research · UC Berkeley · Prof. Koushik Sen",
       body: (

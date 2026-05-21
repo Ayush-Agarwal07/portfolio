@@ -37,10 +37,6 @@ function Hero() {
       <div className="wrap">
         <div className="hero-grid">
           <div>
-            <div className="eyebrow">
-              <span className="dot" />
-              <span className="label">Available · Fall 2026</span>
-            </div>
             <h1 className="display">Ayush Agarwal.</h1>
             <p className="lede">
               CS undergrad at Purdue interested in building intelligent systems. I currently

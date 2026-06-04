@@ -121,7 +121,6 @@
     background: oklch(from var(--bg) l c h / 0.82);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-right: 1px solid var(--rule);
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -247,15 +246,6 @@
     font-weight: 600;
   }
 
-  .side-nav-meta {
-    color: var(--ink-faint);
-    display: grid;
-    font-family: var(--mono);
-    font-size: 10.5px;
-    gap: 8px;
-    line-height: 1.3;
-  }
-
   @media (max-width: 920px) {
     :root {
       --side-nav-width: 70px;
@@ -274,8 +264,7 @@
     }
 
     .mark-full,
-    .side-nav-label,
-    .side-nav-meta {
+    .side-nav-label {
       display: none;
     }
 

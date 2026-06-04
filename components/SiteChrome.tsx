@@ -93,11 +93,6 @@ export function SideNav() {
           );
         })}
       </nav>
-
-      <div className="side-nav-meta">
-        <LocalTime />
-        <span>v2026.05</span>
-      </div>
     </header>
   );
 }

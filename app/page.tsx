@@ -1,5 +1,5 @@
 import { SectionHeader } from "@/components/SectionHeader";
-import { Footer, Topbar } from "@/components/SiteChrome";
+import { Footer, SideNav } from "@/components/SiteChrome";
 import { Stats } from "@/components/Stats";
 import { TickerTape } from "@/components/TickerTape";
 import { HeroCanvas } from "@/components/HeroCanvas";
@@ -15,8 +15,8 @@ import {
 export default function Home() {
   return (
     <>
-      <Topbar />
-      <main>
+      <SideNav />
+      <main className="site-main">
         <Hero />
         <TickerTape />
         <SelectedWork />

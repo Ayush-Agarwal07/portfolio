@@ -10,7 +10,7 @@ Live at **https://ayush-agarwal07.github.io/portfolio/**.
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev      # http://localhost:3000/portfolio
 npm run check    # tsc --noEmit
 npm run build    # next build → static export to out/
 ```
@@ -37,7 +37,7 @@ app/
   globals.css       # design tokens + every component style (~1300 lines, grouped)
 
 components/
-  SiteChrome.tsx    # Topbar + Footer
+  SiteChrome.tsx    # scroll-aware SideNav + Footer
   SectionHeader.tsx # the "§ 0X — Heading" pattern used across the page
   HeroCanvas.tsx    # canvas animation (64 token nodes, edges, pulses)
   TickerTape.tsx    # marquee strip under the hero
@@ -87,7 +87,7 @@ Almost every edit lives in one file:
 ## Conventions
 
 - **No CSS-in-JS, no styled-components.** All styles are in `globals.css` under `@layer base` / `@layer components`. Tailwind utilities are used sparingly for one-off spacing.
-- **Server components by default.** Only `HeroCanvas` and `LocalTime` are `"use client"` — everything else renders on the server, then everything is exported to static HTML at build time.
+- **Server components by default.** Client components are reserved for browser-only behavior such as `HeroCanvas`, `LocalTime`, and the scroll-aware side nav.
 - **No comments unless something is genuinely non-obvious.** The structure should explain itself.
 - **`legacy/Portfolio.original.html`** is kept as a reference — when the visual system needs a sanity check against the original design, diff against it.
 

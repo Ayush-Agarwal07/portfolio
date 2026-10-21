@@ -1,213 +1,166 @@
-import { SectionHeader } from "@/components/SectionHeader";
-import { Footer, SideNav } from "@/components/SiteChrome";
-import { Stats } from "@/components/Stats";
-import { TickerTape } from "@/components/TickerTape";
-import { HeroCanvas } from "@/components/HeroCanvas";
-import { AgentDiagram, DisadusBoard } from "@/components/ProjectVisuals";
+import { AsciiArt } from "@/components/AsciiArt";
+import { BlackHoleHero } from "@/components/BlackHoleHero";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import {
-  agentQrStats,
-  contacts,
-  disadusStats,
-  heroMeta,
-  workItems,
+  contact,
+  email,
+  experienceTitle,
+  hero,
+  horizon,
+  jobs,
+  navLinks,
+  projectMoreLabel,
+  projects,
+  projectsTitle,
+  research,
+  researchTitle,
+  resumeHref,
+  site,
 } from "@/data/portfolio";
 
 export default function Home() {
   return (
     <>
-      <SideNav />
-      <main className="site-main">
-        <Hero />
-        <TickerTape />
-        <SelectedWork />
-        <SectionBridge label="Featured projects" />
-        <AgentQr />
-        <Disadus />
-        <Contact />
-      </main>
-      <Footer />
-    </>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="hero" id="top" data-screen-label="01 Hero">
-      <HeroCanvas />
-      <div className="wrap">
-        <div className="hero-grid">
-          <div>
-            <h1 className="display">Ayush Agarwal.</h1>
-            <p className="lede">
-              CS undergrad at Purdue interested in building intelligent systems. I currently
-              lead the AgentQR team at Boiler Quant and research coding agents under Prof. Tianyi Zhang.
-            </p>
-          </div>
-
-          <aside className="hero-meta">
-            {heroMeta.map((item) => (
-              <div className="hero-meta-row" key={item.label}>
-                <span className="label">{item.label}</span>
-                <span className={`v${item.mono ? " mono" : ""}`}>{item.value}</span>
-              </div>
+      <header className="site-header">
+        <nav className="nav wrap">
+          <a href="#top" className="nav-name">
+            {site.name}
+          </a>
+          <div className="nav-links">
+            {navLinks.map((l) => (
+              <a key={l.href} href={l.href}>
+                {l.label}
+              </a>
             ))}
-          </aside>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function AgentQr() {
-  return (
-    <section className="featured" id="featured" data-screen-label="03 Featured · AgentQR">
-      <div className="wrap">
-        <SectionHeader label="§ 02 — Featured · 2026" compact>
-          An automated research desk: four specialist agents, every claim <em>traceable</em> to a
-          10-K.
-        </SectionHeader>
-
-        <div className="featured-grid">
-          <div className="featured-text">
-            <span className="label">Boiler Quant · AgentQR · Project Lead</span>
-            <h3>Multi-agent RAG over SEC filings, deterministic indicators, and a synthesized Buy/Hold/Sell.</h3>
-            <p>
-              I lead a 5-engineer team building <strong>AgentQR</strong>, a quantitative research
-              system that ingests 10-K/10-Q filings from <strong>SEC EDGAR</strong>, embeds them
-              locally with <span className="mono">bge-small-en-v1.5</span> (384-dim,
-              namespace-per-ticker in Pinecone), and runs four specialist agents on top —
-              orchestrated through an async <strong>FastAPI</strong> backend streaming over SSE to a{" "}
-              <strong>Next.js 14</strong> dashboard.
-            </p>
-            <p>
-              The agents split <em>reasoning</em> from <em>math</em>: fundamentals (P/E, ROE, D/E,
-              DCF), technicals (RSI, MACD, Bollinger, SMA crossover, ATR), and a 2-year backtest
-              (Sharpe / MaxDD / Win Rate) are computed deterministically via the{" "}
-              <span className="mono">ta</span> library — never inferred by the LLM. An{" "}
-              <strong>Orchestrator</strong> synthesizes a Buy/Hold/Sell with a confidence score and
-              price targets, every line grounded in a retrieved, timestamped chunk.
-            </p>
-            <Stats stats={agentQrStats} />
+            <ThemeToggle />
+            <a href={resumeHref} className="pill pill-solid pill-sm">
+              {site.resumeLabel}
+            </a>
           </div>
+        </nav>
+      </header>
 
-          <AgentDiagram />
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Disadus() {
-  return (
-    <section className="featured disadus-feat" id="disadus" data-screen-label="04 Featured · Disadus">
-      <div className="wrap">
-        <SectionHeader label="§ 02b — Featured · 2022–25" compact>
-          <em>“The helpful tool students deserve.”</em> A real, shipped LMS.
-        </SectionHeader>
-
-        <div className="featured-grid disadus-grid">
-          <div className="featured-text">
-            <span className="label">Disadus · Co-founder · disadus.app</span>
-            <h3>Courses, communities, and a <em>tilde-prefixed</em> path search students actually use.</h3>
-            <p>
-              Disadus is a student-first learning platform we shipped to production at{" "}
-              <strong>disadus.app</strong> — courses, modules, materials, announcements, grades, and
-              per-class community spaces, all wrapped in a Next.js 13 PWA that works offline on a
-              Chromebook. The signature interaction: type{" "}
-              <span className="mono">~Lectures/Day&nbsp;23</span> in the search bar to jump straight
-              to a file path across every course you&apos;re enrolled in.
-            </p>
-            <p>
-              I co-founded the company and led the engineering — onboarding flows, the course
-              dashboard, the realtime community layer (Socket.io), the in-browser PDF viewer
-              (PDFTron WebViewer), and a markdown renderer with KaTeX + Twemoji for assignments. We
-              grew it through direct relationships with administrators to{" "}
-              <strong>500+ active students across 8 schools</strong>, driving roadmap with cohort
-              analysis on 90-day post-launch windows.
-            </p>
-            <Stats stats={disadusStats} />
+      <main>
+        <BlackHoleHero figLabel={hero.figLabel} feedLabel={hero.feedLabel}>
+          <h1 className="hero-title">{hero.title}</h1>
+          <p className="hero-intro">{hero.intro}</p>
+          <div className="hero-actions">
+            <a href={`mailto:${email}`} className="pill pill-solid">
+              {hero.primary}
+            </a>
+            <a href={hero.secondary.href} className="pill pill-outline">
+              {hero.secondary.label}
+            </a>
           </div>
+        </BlackHoleHero>
 
-          <DisadusBoard />
+        <div className="horizon">
+          <h2>{horizon.title}</h2>
         </div>
-      </div>
-    </section>
-  );
-}
 
-function SelectedWork() {
-  return (
-    <section id="work" data-screen-label="02 Selected work">
-      <div className="wrap">
-        <SectionHeader label="§ 01 — Work Experience">
-          Some of my <em>experiences</em>.
-        </SectionHeader>
+        <section id="experience" className="section">
+          <div className="wrap split">
+            <h2 className="section-title">{experienceTitle}</h2>
+            <ol className="jobs">
+              {jobs.map((job) => (
+                <li key={job.org} className="job">
+                  <span className="job-dates">{job.dates}</span>
+                  <div className="job-body">
+                    <div className="job-head">
+                      <span className="job-org">{job.org}</span>
+                      <span className="job-role">{job.role}</span>
+                    </div>
+                    <p>{job.desc}</p>
+                    <div className="tags">
+                      {job.tags.map((t) => (
+                        <span key={t} className="tag">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
 
-        <div className="work-list">
-          {workItems.map((work) => (
-            <article className="work-item" key={work.number}>
-              <div className="work-num">{work.number}</div>
-              <div className="work-meta">
-                <div className="org">{work.org}</div>
-                <div className="role">{work.role}</div>
-              </div>
-              <div className="work-body">
-                <p>{work.body}</p>
-                {work.stats ? <Stats stats={work.stats} /> : null}
-                <div className="tag-row">
-                  {work.tags.map((tag) => (
-                    <span className="tag" key={tag}>
-                      {tag}
-                    </span>
-                  ))}
+        <section id="projects" className="section">
+          <div className="wrap stack">
+            <h2 className="section-title">{projectsTitle}</h2>
+            <div className="project-grid">
+              {projects.map((p) => (
+                <article key={p.title} className="project">
+                  <div className="project-art">
+                    <AsciiArt name={p.art} className={`art-${p.art}`} />
+                  </div>
+                  <div className="project-body">
+                    <div className="project-meta">{p.meta}</div>
+                    <h3>{p.title}</h3>
+                    <p>{p.desc}</p>
+                    <div className="project-stack">{p.stack}</div>
+                    <details className="project-more">
+                      <summary>
+                        {projectMoreLabel} <span aria-hidden="true">↓</span>
+                      </summary>
+                      {p.more.body.map((para, i) => (
+                        <p key={i}>{para}</p>
+                      ))}
+                      <dl className="project-stats">
+                        {p.more.stats.map((st) => (
+                          <div key={st.label}>
+                            <dt>{st.label}</dt>
+                            <dd>{st.value}</dd>
+                          </div>
+                        ))}
+                      </dl>
+                    </details>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="research" className="section">
+          <div className="wrap split">
+            <h2 className="section-title">{researchTitle}</h2>
+            <div className="research">
+              {research.map((r) => (
+                <div key={r.title} className="research-item">
+                  <span className="research-title">{r.title}</span>
+                  <span className="research-detail">{r.detail}</span>
+                  {r.link ? (
+                    <a href={r.link.href} className="research-link">
+                      {r.link.label}
+                    </a>
+                  ) : null}
                 </div>
-              </div>
-              <div className="work-when">{work.when}</div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
 
-function SectionBridge({ label }: { label: string }) {
-  return (
-    <div className="section-bridge" aria-hidden="true">
-      <span className="section-bridge-line" />
-      <span className="section-bridge-label">
-        {label} <span className="section-bridge-chevron">↓</span>
-      </span>
-      <span className="section-bridge-line" />
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <section className="contact" id="contact" data-screen-label="05 Contact">
-      <div className="wrap">
-        <div className="contact-inner">
-          <h2>
-            If my work interests you, <a href="mailto:agarw534@purdue.edu">say hi&nbsp;↗</a>
-          </h2>
-
-          <div className="contact-list">
-            {contacts.map((contact) => (
-              <a
-                className="contact-row"
-                href={contact.href}
-                key={contact.label}
-                rel={contact.external ? "noopener" : undefined}
-                target={contact.external ? "_blank" : undefined}
-              >
-                <span className="l">{contact.label}</span>
-                <span className="r">{contact.value}</span>
+      <footer id="contact" className="contact">
+        <div className="wrap contact-inner">
+          <AsciiArt name="orbit" className="art-orbit" />
+          <h2>{contact.title}</h2>
+          <a href={`mailto:${email}`} className="pill pill-solid pill-lg">
+            {email}
+          </a>
+          <div className="contact-links">
+            {contact.links.map((l) => (
+              <a key={l.label} href={l.href}>
+                {l.label}
               </a>
             ))}
           </div>
+          <div className="contact-base">
+            <span>{contact.copyright}</span>
+          </div>
         </div>
-      </div>
-    </section>
+      </footer>
+    </>
   );
 }
